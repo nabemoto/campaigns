@@ -1,2 +1,18 @@
-      <p><%= applicant[:course] %></p>
-      <p><%= applicant[:email] %></p>
+<div class="form-horizontal">
+  <%= form_group(form_label: "コース") do %>
+    <p class="form-control-static"><%= applicant[:course] %></p>
+  <% end %>
+
+  <%= form_group(form_label: "メールアドレス") do %>
+    <p class="form-control-static"><%= applicant[:email] %></p>
+  <% end %>
+
+  <%= form_tag('/create', method: "post") do %>
+    <% [:course, :email].each do |key| %>
+      <input type="hidden" name="applicants[<%= key %>]" value="<%= applicant[key] %>">
+    <% end %>
+    <%= form_group do %>
+      <input type="submit" class="btn btn-block btn-primary" value="応募">
+    <% end %>
+  <% end %>
+</div>

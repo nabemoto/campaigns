@@ -10,6 +10,15 @@ class CampaignsController < ApplicationController
     }
   end
 
+  def create
+    applicant = Applicant.create(applicant_params)
+    redirect_to '/thanks'
+  end
+
+  def thanks
+    
+  end
+
   private
 
   def applicant_params
