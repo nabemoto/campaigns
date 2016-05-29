@@ -3,23 +3,23 @@ class CreateApplicants < ActiveRecord::Migration
     create_table :applicants do |t|
       t.string :user_agent
       t.string :referrer
-      t.string :course,          null: false
-      t.string :course_number,   null: false
-      t.string :email,           null: false
-      t.string :sei_kanji,       null: false
-      t.string :mei_kanji,       null: false
-      t.string :sei_kana,        null: false
-      t.string :mei_kana,        null: false
-      t.integer :age,            null: false
-      t.string :gender,          null: false
-      t.string :postal_code1,    null: false
-      t.string :postal_code2,    null: false
-      t.string :prefecture,      null: false
-      t.string :city,            null: false
-      t.string :building,        null: false
-      t.string :phone_number1,   null: false
-      t.string :phone_number2,   null: false
-      t.string :phone_number3,   null: false
+      t.string :course
+      t.string :course_number
+      t.string :email
+      t.string :sei_kanji
+      t.string :mei_kanji
+      t.string :sei_kana
+      t.string :mei_kana
+      t.integer :age
+      t.string :gender
+      t.string :postal_code1
+      t.string :postal_code2
+      t.string :prefecture
+      t.string :city
+      t.string :building
+      t.string :phone_number1
+      t.string :phone_number2
+      t.string :phone_number3
 
       t.timestamps null: false
     end
