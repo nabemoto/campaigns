@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :campaigns, only: [:index]
+  namespace :campaigns do
+    get '/', to: 'campaigns#index'
+    post '/confirm', to: 'campaigns#confirm'
+  end
 end
