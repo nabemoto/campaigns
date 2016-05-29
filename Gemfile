@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "browserify-rails"
 gem 'react-rails'
 gem 'draper'
+gem "paperclip"
 
 group :development, :test do
   gem 'byebug'
