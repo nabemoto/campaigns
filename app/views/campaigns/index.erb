@@ -1,14 +1,15 @@
 <%= form_tag('/confirm', class: "form-horizontal", method: 'post') do %>
   <%= form_group(form_label: "コース") do %>
     <select class="form-control" name="applicants[course]" >
-      <option value="コースA">コースA</option>
-      <option value="コースB">コースB</option>
-      <option value="コースC">コースC</option>
+      <option value="">選択してください</option>
+      <% Applicant::COURSES.each do |course| %>
+        <option value="<%= course %>" <%= "selected='selected'" if applicant[:course] == course %>><%= course %></option>
+      <% end %>
     </select>
   <% end %>
 
   <%= form_group(form_label: "メールアドレス") do %>
-    <input name="applicants[email]" type="text" class="form-control">
+    <input name="applicants[email]" type="text" class="form-control" value="<%= applicant[:email] %>">
   <% end %>
   
 

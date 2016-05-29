@@ -1,6 +1,7 @@
 class CampaignsController < ApplicationController
   def index
     render locals: {
+      applicant: (flash[:applicant] || {}).symbolize_keys
     }
   end
 
@@ -17,6 +18,11 @@ class CampaignsController < ApplicationController
 
   def thanks
     
+  end
+
+  def edit
+    flash[:applicant] = applicant_params
+    redirect_to '/'
   end
 
   private

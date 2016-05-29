@@ -15,4 +15,13 @@
       <input type="submit" class="btn btn-block btn-primary" value="応募">
     <% end %>
   <% end %>
+
+   <%= form_tag('/edit', method: "post") do %>
+    <% [:course, :email].each do |key| %>
+      <input type="hidden" name="applicants[<%= key %>]" value="<%= applicant[key] %>">
+    <% end %>
+    <%= form_group do %>
+      <input type="submit" class="btn btn-block btn-default" value="修正">
+    <% end %>
+  <% end %>
 </div>
